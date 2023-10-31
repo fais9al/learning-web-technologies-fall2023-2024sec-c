@@ -33,6 +33,10 @@ function get_user_type($user_id){
 
 function get_all_users(){
 
+    $conneciton = get_connection();
+    $sql = "SELECT * FROM users";
+    $result = mysqli_query($conneciton, $sql);
+    return $result;
 
 }
 
@@ -62,7 +66,7 @@ function delete_user($id){
 
 }
 
-
+//check whether user id already exists
 function user_id_exists($user_id){
 
     $conneciton = get_connection();
